@@ -9,7 +9,8 @@ on:
       - master
 
 jobs:
-  format-check:
+  jobs:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,36 +27,8 @@ jobs:
       - name: Run prettier
         run: npm run format-check
 
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Run eslint
         run: npm run lint
-
-  typecheck:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install dependencies
-        run: npm install
 
       - name: Run TypeScript check
         run: npm run typecheck
