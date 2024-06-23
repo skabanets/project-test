@@ -1,3 +1,3 @@
 export function App() {
-  return <h1>Welcome to web!</h1>;
+  return <h1>Welcome to web-dev!</h1>;
 }

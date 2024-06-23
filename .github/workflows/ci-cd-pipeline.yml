@@ -50,7 +50,7 @@ jobs:
 
       - name: Build affected applications
         run: |
-          npx nx affected:build --base=origin/main --head=HEAD
+          npx nx affected:build --base=origin/master --head=HEAD
 
   deploy:
     runs-on: ubuntu-latest
@@ -70,4 +70,4 @@ jobs:
 
       - name: Deploy affected applications
         run: |
-          npx nx affected --target=deploy --base=origin/main --head=HEAD
+          npx nx affected --target=deploy --base=origin/master --head=HEAD
