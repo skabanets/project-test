@@ -34,7 +34,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     needs: checks
     steps:
       - name: Checkout repository
@@ -54,7 +54,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     needs: build
     steps:
       - name: Checkout repository
