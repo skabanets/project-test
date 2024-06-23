@@ -1,2 +1,2 @@
 // index.js
-console.log('Hello World from Web Components!');
+console.log('Hello World from Web!');
