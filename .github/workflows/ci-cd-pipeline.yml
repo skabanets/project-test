@@ -9,7 +9,6 @@ on:
       - master
 
 jobs:
-  jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
