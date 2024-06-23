@@ -1,0 +1,37 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Common setup
+        run: bash scripts/common-setup.sh
+
+      - name: Run prettier
+        run: npm run format-check
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Common setup
+        run: bash scripts/common-setup.sh
+
+      - name: Run eslint
+        run: npm run lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Common setup
+        run: bash scripts/common-setup.sh
+
+      - name: Run TypeScript check
+        run: npm run typecheck
